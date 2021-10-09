@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             NextPos();
         }
@@ -24,7 +25,7 @@ public class CameraController : MonoBehaviour
         {
             PreviousPos();
         }
-        */
+        
     }
 
     private void FixedUpdate()
@@ -40,7 +41,12 @@ public class CameraController : MonoBehaviour
         index++;
         if(index > tab.Count-1)
         {
-            index = tab.Count - 1;
+            //index = tab.Count - 1;
+            GameManager.Instance.CurrentLvl++;
+            GameManager.Instance.MaxLvlRich++;
+            GameManager.Instance.SaveBySerialized();
+            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
             //Debug.Log("Change scene");
         }
         else

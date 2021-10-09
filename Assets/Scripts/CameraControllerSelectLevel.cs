@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class CameraControllerSelectLevel : MonoBehaviour
 {
@@ -35,7 +37,9 @@ public class CameraControllerSelectLevel : MonoBehaviour
         {
             //save data player
 
-            string levelSelected = "Level" + index+1;
+            int numLvl = index + 1;
+            string levelSelected = "Alexlvl" + numLvl +"Test";//to remove
+            //string levelSelected = "Level" + index+1;
             SceneManager.LoadScene(levelSelected);
         }
 
@@ -88,4 +92,5 @@ public class CameraControllerSelectLevel : MonoBehaviour
         }
 
     }
+
 }
