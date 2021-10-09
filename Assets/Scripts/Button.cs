@@ -23,15 +23,14 @@ public class Button : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D collider2D)
+    void OnTriggerEnter2D(Collider2D collider2D)
     {
-        print("test"); 
         
-        if (!locked) {
+        if (locked) {
             locked = false;
             plate.sprite = pushedButton;
             door.sprite = openDoor;
-            door.GetComponent<Rigidbody2D>().isKinematic = true;
+            door.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }
