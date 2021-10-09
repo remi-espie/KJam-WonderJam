@@ -25,7 +25,6 @@ public class Button : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        
         if (locked) {
             locked = false;
             plate.sprite = pushedButton;

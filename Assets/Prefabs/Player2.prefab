@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1120381378340074887}
   - component: {fileID: 1120381378340074616}
   - component: {fileID: 1120381378340074617}
-  - component: {fileID: 1120381378340074618}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -74,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c423c101109ac7d4b9d5f6bb64a4b0d1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: eff080ca3ace8a04d895f3147e146c55, type: 3}
+  m_Color: {r: 0.024959564, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -94,7 +93,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1120381378340074619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d7a651f8ca4119418b7d9ccacb9ed27, type: 3}
+  m_Script: {fileID: 11500000, guid: bee529cda88c0974f97a4e8b44c2c8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftMove: 276
@@ -147,14 +146,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!247 &1120381378340074618
-ConstantForce2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120381378340074619}
-  m_Enabled: 1
-  m_Force: {x: 0, y: -9.81}
-  m_RelativeForce: {x: 0, y: 0}
-  m_Torque: 0
