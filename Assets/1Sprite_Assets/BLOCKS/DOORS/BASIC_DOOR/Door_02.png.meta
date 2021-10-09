@@ -84,7 +84,27 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+<<<<<<< HEAD:Assets/Assets/BLOCKS/DOORS/BASIC_DOOR/Door_02.png.meta
+<<<<<<< HEAD
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+=======
+    buildTarget: Android
+>>>>>>> 44995e1356507ba4dd02380ce62af3cca7f53377
+=======
     buildTarget: DefaultTexturePlatform
+>>>>>>> develop:Assets/1Sprite_Assets/BLOCKS/DOORS/BASIC_DOOR/Door_02.png.meta
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
