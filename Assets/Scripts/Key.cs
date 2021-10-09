@@ -9,8 +9,8 @@ public class Key : MonoBehaviour
     public Sprite openDoor;
     private void OnTriggerEnter2D(Collider2D collider2D)
     {
-            door.sprite = openDoor;
-            door.GetComponent<BoxCollider2D>().enabled = false;
-            Destroy(gameObject);
+        door.sprite = openDoor;
+        door.GetComponent<BoxCollider2D>().enabled = false;
+        Destroy(gameObject);
     }   
 }
