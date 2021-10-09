@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovements : MonoBehaviour
+public class Player : MonoBehaviour
 {
     private float speed = 300.0f;
     private Vector3 velocity;
@@ -16,6 +16,8 @@ public class PlayerMovements : MonoBehaviour
 
     private readonly float TIMEBEFORECHANGEGRAVITY = 2.0f;
     private float timeBeforeChangeGravity;
+
+    private uint nbSignals = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +43,7 @@ public class PlayerMovements : MonoBehaviour
 
     private void Update()
     {
-        timeBeforeChangeGravity -= Time.fixedDeltaTime;
+        timeBeforeChangeGravity -= Time.deltaTime;
         timeBeforeChangeGravity = Mathf.Max(0.0f, timeBeforeChangeGravity);
 
         if(Input.GetKeyDown(changeGravity) && timeBeforeChangeGravity == 0.0f)
@@ -49,5 +51,20 @@ public class PlayerMovements : MonoBehaviour
             Physics2D.gravity *= -1.0f;
             timeBeforeChangeGravity = TIMEBEFORECHANGEGRAVITY;
         }   
+    }
+
+    public bool isAlive()
+    {
+        return nbSignals > 0;
+    }
+
+    public void AddSignal()
+    {
+        nbSignals++;
+    }
+
+    public void RemoveSignal()
+    {
+        nbSignals--;
     }
 }

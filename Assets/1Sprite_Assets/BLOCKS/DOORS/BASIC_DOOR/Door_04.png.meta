@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c2fb379a561dfe74384be41bd759c9a7
+guid: 7f7b2cb87f618114e9a908cee56b6daa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -84,7 +84,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-<<<<<<< HEAD:Assets/Assets/BLOCKS/Wireless_Connector/Wifi02.png.meta
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -97,8 +96,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-=======
->>>>>>> develop:Assets/1Sprite_Assets/BLOCKS/Wireless_Connector/Wifi02.png.meta
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
