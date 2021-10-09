@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static float timeBeforeDie = 10.0f;
+
     private float speed = 300.0f;
     private Vector3 velocity;
 
@@ -66,5 +68,15 @@ public class Player : MonoBehaviour
     public void RemoveSignal()
     {
         nbSignals--;
+    }
+
+    public void EndSection()
+    {
+        transform.gameObject.SetActive(false);
+    }
+
+    public void StartSection()
+    {
+        transform.gameObject.SetActive(true);
     }
 }
