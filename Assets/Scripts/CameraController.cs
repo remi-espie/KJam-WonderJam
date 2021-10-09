@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] List<Transform> tab;
     [SerializeField] Vector3 offset;
     int index = 0;
-    float smoothSpeed = 2.5f;
+    float smoothSpeed = 2.5f; 
     bool camera_move_enabled = false;
     Vector3 desiredPosition;
 

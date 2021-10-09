@@ -1,26 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class CameraControllerSelectLevel : CameraController
+public class CameraControllerSelectLevel : MonoBehaviour
 {
-    [SerializeField] List<Transform> tab;
+    [SerializeField] List<GameObject> tab;
     [SerializeField] Vector3 offset;
+
     int index = 0;
     float smoothSpeed = 2.5f;
     bool camera_move_enabled = false;
     Vector3 desiredPosition;
+
+    private void Start()
+    {
+        tab[index].GetComponent<Animator>().SetBool("isSelected", true);
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            base.Invoke("NextPos", 0.5f);
+            if(index+1 < tab.Count-1 && index+1 <= PlayerPrefs.GetInt("MaxLevelRich"))
+                NextPos();
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            base.Invoke("PreviousPos",0.5f);
+            if (index - 1 > 0 )
+                PreviousPos();
+        }
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            //save data player
+
+            string levelSelected = "Level" + index+1;
+            SceneManager.LoadScene(levelSelected);
         }
 
     }
@@ -33,8 +49,9 @@ public class CameraControllerSelectLevel : CameraController
             camera_move_enabled = false;
     }
 
-    void NextPos()
+    public void NextPos()
     {
+        tab[index].GetComponent<Animator>().SetBool("isSelected", false);
         index++;
         if (index > tab.Count - 1)
         {
@@ -43,16 +60,18 @@ public class CameraControllerSelectLevel : CameraController
         }
         else
         {
-            desiredPosition = tab[index].position + offset;
+            desiredPosition = tab[index].transform.position + offset;
             desiredPosition.x = 0;
+            tab[index].GetComponent<Animator>().SetBool("isSelected", true);
             Debug.Log(desiredPosition);
             camera_move_enabled = true;
         }
 
     }
 
-    void PreviousPos()
+    public void PreviousPos()
     {
+        tab[index].GetComponent<Animator>().SetBool("isSelected", false);
         index--;
         if (index < 0)
         {
@@ -61,8 +80,9 @@ public class CameraControllerSelectLevel : CameraController
         }
         else
         {
-            desiredPosition = tab[index].position + offset;
+            desiredPosition = tab[index].transform.position + offset;
             desiredPosition.x = 0;
+            tab[index].GetComponent<Animator>().SetBool("isSelected", true);
             Debug.Log(desiredPosition);
             camera_move_enabled = true;
         }
