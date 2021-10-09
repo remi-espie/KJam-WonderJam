@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    public SpriteRenderer key;
-    public SpriteRenderer door;
-    public Sprite openDoor;
-    private void OnTriggerEnter2D(Collider2D collider2D)
+    public DoorKey door;
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-            door.sprite = openDoor;
-            door.GetComponent<BoxCollider2D>().enabled = false;
-            Destroy(gameObject);
-    }   
+        door.SendMessage("Open");
+        Destroy(transform.gameObject);
+    }
 }
