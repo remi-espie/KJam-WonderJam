@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Arthur_Scene.unity
-    guid: c8f6c1342855ac9418d31a99019d647e
+    path: Assets/Scenes/LevelSelection.unity
+    guid: fa92692ac65314e40bd0c62446ad53da
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: fb788a01f9d6ac34484673af20d6a0cd
+    path: Assets/Scenes/AlexLvl1Test.unity
+    guid: af9c73acc3f8f4f4c9ad940ecc6211a6
   - enabled: 1
-    path: Assets/Scenes/Scene Remi.unity
-    guid: a18698ac1ca95a74c84d3e755807e60b
+    path: Assets/Scenes/AlexLvl2Test.unity
+    guid: 31fa2e0e36da5d54fb0754be09294d2b
   m_configObjects: {}
