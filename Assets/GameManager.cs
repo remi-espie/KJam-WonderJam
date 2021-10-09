@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject camera;
-    [SerializeField] List<transform> tab;
-    float smoothSpeed = 0.125f;
-    private bool Player1End { get; }
-    private bool Player2End { get; }
+    public CameraController Camera;
+    private bool Player1End { get; set; }
+    private bool Player2End { get; set; }
+    private int nbTries { get; set; }
 
 
     // Start is called before the first frame update
@@ -23,7 +22,7 @@ public class GameManager : MonoBehaviour
     {
         if(Player1End && Player2End)
         {
-            
+            Camera.NextPos();
         }
     }
 
