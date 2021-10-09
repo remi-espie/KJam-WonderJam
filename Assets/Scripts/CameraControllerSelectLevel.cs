@@ -8,6 +8,7 @@ using System.IO;
 public class CameraControllerSelectLevel : MonoBehaviour
 {
     [SerializeField] List<GameObject> tab;
+    public GameObject gameManager;
     [SerializeField] Vector3 offset;
 
     int index = 0;
@@ -18,6 +19,7 @@ public class CameraControllerSelectLevel : MonoBehaviour
     private void Start()
     {
         tab[index].GetComponent<Animator>().SetBool("isSelected", true);
+        DontDestroyOnLoad(gameManager);
     }
 
     // Update is called once per frame

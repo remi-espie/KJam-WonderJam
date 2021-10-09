@@ -44,7 +44,7 @@ public class CameraController : MonoBehaviour
             //index = tab.Count - 1;
             GameManager.Instance.CurrentLvl++;
             GameManager.Instance.MaxLvlRich++;
-            GameManager.Instance.SaveBySerialized();
+            GameManager.Instance.SavePlayer();
             
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
             //Debug.Log("Change scene");

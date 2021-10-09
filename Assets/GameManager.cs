@@ -5,65 +5,37 @@ using UnityEngine.SceneManagement;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-public class GameManager : MonoBehaviour
+public class GameManager
 {
-    private static GameManager instance;
+    private static GameManager instance = new GameManager();
 
     private int currentLvl { get; set; }
     private int maxLvlRich { get; set; }
     private int[] collectable { get; set; }
     private int[] nbTries { get; set; }
 
-    private void Start()
+    void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //LoadPlayer();
     }
-    public void SaveBySerialized()
+    public void SavePlayer()
     {
-        Save save = createSaveGameObject();
-
-        BinaryFormatter bf = new BinaryFormatter();
-
-        FileStream fileStream = File.Create(Application.dataPath + "/DataBinary.txt");
-
-        bf.Serialize(fileStream, save);
-
-        fileStream.Close();
+        SaveSysteme.SavePlayer(this);
     }
 
-    private Save createSaveGameObject()
+    public void LoadPlayer()
     {
-        Save save = new Save();
+        PlayerData data = SaveSysteme.LoadPlayer();
 
-        save.Collectable[GameManager.Instance.CurrentLvl] = GameManager.Instance.Collectable[GameManager.Instance.CurrentLvl - 1];
-        save.MaxLevelRich = GameManager.Instance.MaxLvlRich;
-        save.nbTries[GameManager.Instance.CurrentLvl] = GameManager.Instance.NbTries[GameManager.Instance.CurrentLvl - 1];
-        save.currentLvl = GameManager.Instance.CurrentLvl;
-
-        return save;
-    }
-
-    private void LoadSave()
-    {
-        if (File.Exists(Application.dataPath + "/DataBinary.txt"))
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-
-            FileStream fileStream = File.Open(Application.dataPath + "/DataBinary.txt", FileMode.Open);
-
-            Save save = bf.Deserialize(fileStream) as Save;
-
-            GameManager.Instance.CurrentLvl = save.currentLvl;
-            GameManager.Instance.MaxLvlRich = save.MaxLevelRich;
-            GameManager.Instance.NbTries = save.nbTries;
-            GameManager.Instance.Collectable = save.Collectable;
-        }
-
+        currentLvl = data.CurrentLvl;
+        maxLvlRich = data.MaxLvlRich;
+        collectable = data.Collectable;
+        nbTries = data.NbTries;
     }
 
     private GameManager()
     {
-        LoadSave();
+        LoadPlayer();
     }
 
     public static GameManager Instance

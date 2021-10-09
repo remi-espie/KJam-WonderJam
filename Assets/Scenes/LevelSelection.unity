@@ -1115,6 +1115,7 @@ MonoBehaviour:
   - {fileID: 2094370629}
   - {fileID: 991314960}
   - {fileID: 1385669499}
+  gameManager: {fileID: 501154056}
   offset: {x: 0, y: 2, z: -10}
 --- !u!1 &1844212848
 GameObject:
