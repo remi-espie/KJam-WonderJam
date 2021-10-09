@@ -7,6 +7,9 @@ public class Camera : MonoBehaviour
     public float visionLength;
     public float visionHeight;
 
+    public Sprite activateSprite;
+    public Sprite disableSprite;
+
     private GameObject vision;
 
     // Start is called before the first frame update
@@ -17,9 +20,15 @@ public class Camera : MonoBehaviour
         vision.transform.localPosition = new Vector2(-visionHeight - 0.81f, -0.145f);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Activate()
     {
-        
+        GetComponent<SpriteRenderer>().sprite = disableSprite;
+        vision.SetActive(false);
+    }
+
+    public void Desactivate()
+    {
+        GetComponent<SpriteRenderer>().sprite = activateSprite;
+        vision.SetActive(true);
     }
 }
