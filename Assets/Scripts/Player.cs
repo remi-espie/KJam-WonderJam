@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public KeyCode rightMove;
     public KeyCode changeGravity;
 
-    private readonly float TIMEBEFORECHANGEGRAVITY = 2.0f;
+    private readonly float TIMEBEFORECHANGEGRAVITY = 0.25f;
     private float timeBeforeChangeGravity;
 
     private uint nbSignals = 0;
