@@ -84,6 +84,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+<<<<<<< HEAD
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -97,6 +98,9 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+=======
+    buildTarget: Android
+>>>>>>> 44995e1356507ba4dd02380ce62af3cca7f53377
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
