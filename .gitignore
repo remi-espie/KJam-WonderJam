@@ -211,7 +211,7 @@ sysinfo.txt
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-/[Aa]ssets/[Pps]lugin/*
+/[Aa]ssets/[Pp]lugins/*
 
 ### VisualStudioCode ###
 .vscode/*
