@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class Player : MonoBehaviour
     private static bool playersHasActivateAlarm = false;
     private static bool death = false;
 
-    public float timeBeforeDie = 2.0f;
+    public Text timeBeforeDieText;
+    private float timeBeforeDie = 2.0f;
 
     public static bool gravityFlipped = false;
     Vector2 defaultGravity;
@@ -97,6 +99,8 @@ public class Player : MonoBehaviour
         {
             timeBeforeDie = 2.0f;
         }
+
+        timeBeforeDieText.text = timeBeforeDie.ToString("F2");
     }
 
     public static void CheckPlayers()
@@ -112,7 +116,7 @@ public class Player : MonoBehaviour
             MainCamera.GetInstance().StartAlarm();
             playersHasActivateAlarm = true;
         }
-        else if(playersHasActivateAlarm)
+        else if(playersHasActivateAlarm && !death)
         {
             playersHasActivateAlarm = false;
             MainCamera.GetInstance().StopAlarm();
