@@ -81,7 +81,6 @@ public class Player : MonoBehaviour
         {
             GravityFlipped = !GravityFlipped;
             timeBeforeChangeGravity = TIMEBEFORECHANGEGRAVITY;
-<<<<<<< HEAD
         }   
 
         if(nbSignals == 0)
@@ -117,8 +116,6 @@ public class Player : MonoBehaviour
         {
             playersHasActivateAlarm = false;
             MainCamera.GetInstance().StopAlarm();
-=======
->>>>>>> 85c22385d8dbe4b85fde4bb847a616abc25d5246
         }
     }
 
@@ -148,7 +145,6 @@ public class Player : MonoBehaviour
         endSection = false;
         GetComponent<SpriteRenderer>().enabled = true;
     }
-<<<<<<< HEAD
 
     public static void Death()
     {
@@ -166,7 +162,4 @@ public class Player : MonoBehaviour
 
         MainCamera.GetInstance().StopAlarm();
     }
-}
-=======
 }   
->>>>>>> 85c22385d8dbe4b85fde4bb847a616abc25d5246
