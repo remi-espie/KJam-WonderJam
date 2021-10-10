@@ -199,16 +199,12 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(2.0f);
 
-        string nextLevel = SceneManager.GetActiveScene().name;
-        //Time.timeScale = 1.0f;
-        //death = false;
         MainCamera.GetInstance().StopAlarm();
-        //DontDestroyOnLoad(transform.gameObject);
+        Time.timeScale = 1.0f;
+        death = false;
         players.Clear();
-        SceneManager.LoadScene("Level1");
-        
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //DontDestroyOnLoad(transform.gameObject);
+        SceneManager.LoadScene("LevelTwo", LoadSceneMode.Single);
     }
 
     public static void AddPlayer(Player player)
