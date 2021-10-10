@@ -37,8 +37,6 @@ public class MainCamera : MonoBehaviour
         if(alarm)
         {
             alarm = false;
-            StopCoroutine(Alarm());
-            cam.backgroundColor = camColor;
         }
     }
 
@@ -46,11 +44,14 @@ public class MainCamera : MonoBehaviour
     {
         while(alarm)
         {
-            cam.backgroundColor = Color.red;
-            yield return new WaitForSecondsRealtime(0.5f);
+            if(alarm)
+            {
+                yield return new WaitForSecondsRealtime(0.5f);
+                cam.backgroundColor = Color.red;
+            }
 
-            cam.backgroundColor = camColor;
             yield return new WaitForSecondsRealtime(0.5f);
+            cam.backgroundColor = camColor;
         }
 
         yield return null;
