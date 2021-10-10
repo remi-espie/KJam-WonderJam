@@ -41,7 +41,6 @@ public class Spike_Collision : MonoBehaviour
         if (collider2D.tag == "Guard")
         {
             print("hitbox touchée par GUARD");
-            collider2D.sendMessage("youdienow");
 
         }
     }
