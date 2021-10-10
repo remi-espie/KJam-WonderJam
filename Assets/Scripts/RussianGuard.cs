@@ -3,19 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class RussianGuard : MonoBehaviour
 {
-    public static float timeBeforeDie = 10.0f;
-
-    private float speed = 300.0f;
+    private float speed = 100.0f;
     private Vector3 velocity;
 
     private Rigidbody2D rb;
 
-    public KeyCode leftMove;
-    public KeyCode rightMove;
-    public KeyCode changeGravity;
-
+    private Boolean direction = false;
     private readonly float TIMEBEFORECHANGEGRAVITY = 2.0f;
     private float timeBeforeChangeGravity;
 
@@ -27,14 +22,20 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    void turnAroundKazuya()
+    {
+        direction = !direction;
+        Debug.Log("GUARD: Turning around now!");
+    }
+
     void FixedUpdate()
     {
         float movement = 0.0f;
-        if(Input.GetKey(leftMove))
+        if (direction)
         {
             movement = -1.0f;
         }
-        else if(Input.GetKey(rightMove))
+        else if (!direction)
         {
             movement = 1.0f;
         }
@@ -45,14 +46,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        timeBeforeChangeGravity -= Time.deltaTime;
-        timeBeforeChangeGravity = Mathf.Max(0.0f, timeBeforeChangeGravity);
-
-        if(Input.GetKeyDown(changeGravity) && timeBeforeChangeGravity == 0.0f)
-        {
-            Physics2D.gravity *= -1.0f;
-            timeBeforeChangeGravity = TIMEBEFORECHANGEGRAVITY;
-        }   
+        
     }
 
     public bool isAlive()
@@ -68,15 +62,5 @@ public class Player : MonoBehaviour
     public void RemoveSignal()
     {
         nbSignals--;
-    }
-
-    public void EndSection()
-    {
-        transform.gameObject.SetActive(false);
-    }
-
-    public void StartSection()
-    {
-        transform.gameObject.SetActive(true);
     }
 }
