@@ -46,12 +46,12 @@ public class MainCamera : MonoBehaviour
         {
             if(alarm)
             {
-                yield return new WaitForSecondsRealtime(0.5f);
                 Canvas.GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                yield return new WaitForSecondsRealtime(0.5f);
             }
 
-            yield return new WaitForSecondsRealtime(0.5f);
             Canvas.GetComponent<RawImage>().color = new Color(255, 255, 255, 0);
+            yield return new WaitForSecondsRealtime(0.5f);
         }
 
         yield return null;

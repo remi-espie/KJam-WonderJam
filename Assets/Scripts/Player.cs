@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -88,6 +89,8 @@ public class Player : MonoBehaviour
 
             Vector3 targetVelocity = new Vector2(movement * speed * Time.fixedDeltaTime, rb.velocity.y);
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.01f);
+
+            Debug.Log(movement);
         }
     }
 
@@ -104,7 +107,7 @@ public class Player : MonoBehaviour
             timeBeforeChangeGravity = TIMEBEFORECHANGEGRAVITY;
         }   
 
-        if(nbSignals == 0)
+        if(nbSignals == 0 && !endSection)
         {
             timeBeforeDie -= Time.deltaTime;
             timeBeforeDie = Mathf.Max(0.0f, timeBeforeDie);
@@ -184,6 +187,9 @@ public class Player : MonoBehaviour
         yield return new WaitForSecondsRealtime(2.0f);
 
         MainCamera.GetInstance().StopAlarm();
+        players.Clear();
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public static void AddPlayer(Player player)
