@@ -2,13 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public TextElement timer;
-    
-    public static float timeBeforeDie = 10.0f;
+    private static List<Player> players = new List<Player>();
+    private static bool playersHasActivateAlarm = false;
+    private static bool death = false;
+
+    public Text timeBeforeDieText;
+    private float timeBeforeDie = 2.0f;
 
     public static bool gravityFlipped = false;
     Vector2 defaultGravity;
@@ -26,7 +29,7 @@ public class Player : MonoBehaviour
     private float timeBeforeChangeGravity;
 
     private uint nbSignals = 0;
-    public float timeRemaining = 10;
+    private bool endSection = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +40,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         defaultGravity = Physics2D.gravity;
+        players.Add(this);
     }
 
     public bool GravityFlipped
@@ -51,35 +55,71 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        float movement = 0.0f;
-        if(Input.GetKey(leftMove))
+        if (!endSection)
         {
-            movement = -1.0f;
-        }
-        else if(Input.GetKey(rightMove))
-        {
-            movement = 1.0f;
-        }
+            float movement = 0.0f;
+            if (Input.GetKey(leftMove))
+            {
+                movement = -1.0f;
+            }
+            else if (Input.GetKey(rightMove))
+            {
+                movement = 1.0f;
+            }
 
-        Vector3 targetVelocity = new Vector2(movement * speed * Time.fixedDeltaTime, rb.velocity.y);
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.01f);
+            Vector3 targetVelocity = new Vector2(movement * speed * Time.fixedDeltaTime, rb.velocity.y);
+            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.01f);
+        }
     }
 
     private void Update()
     {
+        CheckPlayers();
+
         timeBeforeChangeGravity -= Time.deltaTime;
         timeBeforeChangeGravity = Mathf.Max(0.0f, timeBeforeChangeGravity);
 
-        if(Input.GetKeyDown(changeGravity) && timeBeforeChangeGravity == 0.0f)
+        if (Input.GetKeyDown(changeGravity) && timeBeforeChangeGravity == 0.0f && !endSection)
         {
             GravityFlipped = !GravityFlipped;
             timeBeforeChangeGravity = TIMEBEFORECHANGEGRAVITY;
+        }   
+
+        if(nbSignals == 0)
+        {
+            timeBeforeDie -= Time.deltaTime;
+            timeBeforeDie = Mathf.Max(0.0f, timeBeforeDie);
+
+            if(timeBeforeDie == 0.0f && !death)
+            {
+                Death();
+            }
+        }
+        else
+        {
+            timeBeforeDie = 2.0f;
         }
 
-        if (nbSignals<=0)
+        timeBeforeDieText.text = timeBeforeDie.ToString("F2");
+    }
+
+    public static void CheckPlayers()
+    {
+        int i = 0;
+        while(i < players.Count && players[i].nbSignals > 0)
         {
-            timeRemaining -= Time.deltaTime;
-            //timer.text = Math.Round(timeRemaining).ToString();
+            i++;
+        }
+
+        if(i < players.Count && !death)
+        {
+            MainCamera.GetInstance().StartAlarm();
+            playersHasActivateAlarm = true;
+        }
+        else if(playersHasActivateAlarm && !death)
+        {
+            playersHasActivateAlarm = false;
+            MainCamera.GetInstance().StopAlarm();
         }
     }
 
@@ -100,11 +140,30 @@ public class Player : MonoBehaviour
 
     public void EndSection()
     {
-        transform.gameObject.SetActive(false);
+        endSection = true;
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public void StartSection()
     {
-        transform.gameObject.SetActive(true);
+        endSection = false;
+        GetComponent<SpriteRenderer>().enabled = true;
     }
-}
+
+    public static void Death()
+    {
+        if(!death)
+        {
+            death = true;
+            Time.timeScale = 0.0f;
+            players[0].StartCoroutine(players[0].DeathCoroutine());
+        }
+    }
+
+    private IEnumerator DeathCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(2.0f);
+
+        MainCamera.GetInstance().StopAlarm();
+    }
+}   

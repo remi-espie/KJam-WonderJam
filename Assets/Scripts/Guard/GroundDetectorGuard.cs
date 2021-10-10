@@ -30,4 +30,10 @@ public class GroundDetectorGuard : MonoBehaviour
     {
         print("Start of collision");
     }
+
+    public void youdienow()
+    {
+        Destroy(parent);
+        Destroy(this);
+    }
 }
