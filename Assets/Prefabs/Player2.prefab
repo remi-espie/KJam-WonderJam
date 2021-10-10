@@ -21,7 +21,11 @@ GameObject:
   - component: {fileID: 7100190600944693848}
   - component: {fileID: 7100190600944693849}
   - component: {fileID: 7100190600944693850}
+<<<<<<< HEAD
+  - component: {fileID: 6798200550472967847}
+=======
 >>>>>>> c721b7a3bfb76151b0fb331772fc32195174e6b7
+>>>>>>> e44bc5612b258cf8cf3d473a4b7d95f99ed1a3dd
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -151,12 +155,32 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.25, y: 1}
   m_Direction: 0
+<<<<<<< HEAD
+--- !u!95 &6798200550472967847
+Animator:
+  serializedVersion: 3
+=======
 --- !u!61 &817496068702019606
 BoxCollider2D:
+>>>>>>> e44bc5612b258cf8cf3d473a4b7d95f99ed1a3dd
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 7100190600944693851}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ac01fdaee1c0b944297e66622a00df11, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+=======
   m_GameObject: {fileID: 1120381378340074619}
   m_Enabled: 1
   m_Density: 1
@@ -177,3 +201,4 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.27416778, y: 1}
   m_EdgeRadius: 0
+>>>>>>> e44bc5612b258cf8cf3d473a4b7d95f99ed1a3dd
