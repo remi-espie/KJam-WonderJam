@@ -41,6 +41,7 @@ public class Spike_Collision : MonoBehaviour
         if (collider2D.tag == "Guard")
         {
             print("hitbox touchée par GUARD");
+            Destroy(collider2D.gameObject);
 
         }
     }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2193260612687153690}
   - component: {fileID: 2193260612687153689}
   - component: {fileID: 2193260612687153684}
+  - component: {fileID: 8332893324175426396}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -99,6 +100,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alarm: 0
   Canvas: {fileID: 4444247197301453602}
+--- !u!114 &8332893324175426396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2193260612687153688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c9219160cc55584699bd1973b609952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tab: []
+  offset: {x: 0, y: 0, z: 0}
 --- !u!222 &2193260612949437880
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -165,6 +180,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 2584263197644298682, guid: ccd858e95b38f4d4baaa8b15c8559628,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2193260612687153690}
     - target: {fileID: 2584263197644298685, guid: ccd858e95b38f4d4baaa8b15c8559628,
         type: 3}
       propertyPath: m_Pivot.x
