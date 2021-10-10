@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class Player : MonoBehaviour
 {
     private static List<Player> players = new List<Player>();
@@ -189,7 +190,7 @@ public class Player : MonoBehaviour
         if(!death)
         {
             death = true;
-            Time.timeScale = 0.0f;
+            Time.timeScale = 0f;
             players[0].StartCoroutine(players[0].DeathCoroutine());
         }
     }
@@ -199,8 +200,9 @@ public class Player : MonoBehaviour
         yield return new WaitForSecondsRealtime(2.0f);
 
         MainCamera.GetInstance().StopAlarm();
-        players.Clear();
         Time.timeScale = 1.0f;
+        death = false;
+        players.Clear();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
