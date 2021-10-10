@@ -21,7 +21,8 @@ public class Spike_Collision : MonoBehaviour
 
     public static void Death()
     {
-        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+        SceneManager.LoadScene("LevelOne");
+        //SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
 
     void OnTriggerEnter2D(Collider2D collider2D)
