@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CameraEnnemy : MonoBehaviour
 {
-    public float visionLength;
-    public float visionHeight;
-
     public Sprite activateSprite;
     public Sprite disableSprite;
 
@@ -16,8 +13,6 @@ public class CameraEnnemy : MonoBehaviour
     void Start()
     {
         vision = transform.GetChild(0).gameObject;
-        vision.transform.localScale = new Vector2(visionHeight, visionLength);
-        vision.transform.localPosition = new Vector2(-visionHeight - 0.81f, -0.145f);
     }
 
     public void Activate()
