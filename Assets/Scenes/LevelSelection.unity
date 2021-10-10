@@ -2257,10 +2257,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3586774303618360208, guid: fdd5e7999d198a14e8a1203b6c08c400,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9579922
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586774303618360208, guid: fdd5e7999d198a14e8a1203b6c08c400,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9579922
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586774303618360208, guid: fdd5e7999d198a14e8a1203b6c08c400,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9811321
+      objectReference: {fileID: 0}
     - target: {fileID: 3586774303618360209, guid: fdd5e7999d198a14e8a1203b6c08c400,
         type: 3}
       propertyPath: m_Name
       value: stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586774303618360209, guid: fdd5e7999d198a14e8a1203b6c08c400,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3586774303618360211, guid: fdd5e7999d198a14e8a1203b6c08c400,
         type: 3}

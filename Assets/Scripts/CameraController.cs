@@ -17,14 +17,14 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        /*if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             NextPos();
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             PreviousPos();
-        }
+        }*/
         
     }
 
