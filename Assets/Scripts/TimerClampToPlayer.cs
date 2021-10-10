@@ -7,14 +7,19 @@ public class TimerClampToPlayer : MonoBehaviour
 {
 
     [SerializeField]
-    private Text timerLabel;
-
-
-    // Update is called once per frame
-    void Update()
+    private Text timerTextLabel;
+    Transform playerTransform;
+    Transform timerTextLabelOverlay;
+    void Start()
     {
-        //float xPos = this.transform.position
-        Vector2 timerPos = Camera.main.WorldToScreenPoint(this.gameObject.transform.position);
-        timerLabel.transform.position = timerPos;
+        playerTransform = gameObject.transform;
+        timerTextLabelOverlay = timerTextLabel.transform;
+    }
+    void LateUpdate()
+    {
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(playerTransform.position);
+        // add a tiny bit of height?
+        screenPos.y += 2; // adjust as you see fit.
+        timerTextLabelOverlay.position = screenPos;
     }
 }
