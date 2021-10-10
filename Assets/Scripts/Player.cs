@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     public KeyCode rightMove;
     public KeyCode changeGravity;
 
-    private readonly float TIMEBEFORECHANGEGRAVITY = 2.0f;
+    private readonly float TIMEBEFORECHANGEGRAVITY = 0.75f;
     private float timeBeforeChangeGravity;
 
     private uint nbSignals = 0;
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         defaultGravity = Physics2D.gravity;
-        players.Add(this);
+        Player.AddPlayer(this);
     }
 
     public bool GravityFlipped
@@ -65,6 +65,25 @@ public class Player : MonoBehaviour
             else if (Input.GetKey(rightMove))
             {
                 movement = 1.0f;
+            }
+
+            SpriteRenderer spr = GetComponent<SpriteRenderer>();
+            if(movement < 0.0f)
+            {
+                spr.flipX = true;
+            }
+            else if(movement > 0.0f)
+            {
+                spr.flipX = false;
+            }
+
+            if(Physics2D.gravity.y > 0.0f)
+            {
+                spr.flipY = true;
+            }
+            else if (Physics2D.gravity.y < 0.0f)
+            {
+                spr.flipY = false;
             }
 
             Vector3 targetVelocity = new Vector2(movement * speed * Time.fixedDeltaTime, rb.velocity.y);
@@ -165,5 +184,18 @@ public class Player : MonoBehaviour
         yield return new WaitForSecondsRealtime(2.0f);
 
         MainCamera.GetInstance().StopAlarm();
+    }
+
+    public static void AddPlayer(Player player)
+    {
+        players.Add(player);
+
+        for(int i = 0; i < players.Count; i++)
+        {
+            for(int j = i; j < players.Count; j++)
+            {
+                Physics2D.IgnoreCollision(players[i].GetComponent<CapsuleCollider2D>(), players[j].GetComponent<CapsuleCollider2D>());
+            }
+        }
     }
 }   
