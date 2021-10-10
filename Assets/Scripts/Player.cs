@@ -2,9 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
+    public TextElement timer;
+    
     public static float timeBeforeDie = 10.0f;
 
     public static bool gravityFlipped = false;
@@ -23,6 +26,7 @@ public class Player : MonoBehaviour
     private float timeBeforeChangeGravity;
 
     private uint nbSignals = 0;
+    public float timeRemaining = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +74,13 @@ public class Player : MonoBehaviour
         {
             GravityFlipped = !GravityFlipped;
             timeBeforeChangeGravity = TIMEBEFORECHANGEGRAVITY;
-        }   
+        }
+
+        if (nbSignals<=0)
+        {
+            timeRemaining -= Time.deltaTime;
+            //timer.text = Math.Round(timeRemaining).ToString();
+        }
     }
 
     public bool isAlive()
