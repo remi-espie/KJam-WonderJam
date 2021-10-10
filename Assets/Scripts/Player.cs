@@ -67,6 +67,25 @@ public class Player : MonoBehaviour
                 movement = 1.0f;
             }
 
+            SpriteRenderer spr = GetComponent<SpriteRenderer>();
+            if(movement < 0.0f)
+            {
+                spr.flipX = true;
+            }
+            else if(movement > 0.0f)
+            {
+                spr.flipX = false;
+            }
+
+            if(Physics2D.gravity.y > 0.0f)
+            {
+                spr.flipY = true;
+            }
+            else if (Physics2D.gravity.y < 0.0f)
+            {
+                spr.flipY = false;
+            }
+
             Vector3 targetVelocity = new Vector2(movement * speed * Time.fixedDeltaTime, rb.velocity.y);
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.01f);
         }
