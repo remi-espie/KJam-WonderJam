@@ -16,7 +16,7 @@ public class CameraControllerSelectLevel : MonoBehaviour
     [SerializeField] List<Sprite> BouttonsAscensseur;
     [SerializeField] SpriteRenderer SpriteButton;
     [SerializeField] Animator transition;
-    [SerializeField] float transitionTime = 1f;
+    [SerializeField] float transitionTime = 1.5f;
     //public GameObject gameManager;
     [SerializeField] Vector3 offset;
 
@@ -86,7 +86,13 @@ public class CameraControllerSelectLevel : MonoBehaviour
             //GameManager.Instance.Collectable[GameManager.Instance.CurrentLvl] = 0;
             int numLvl = index + 1;
             string levelSelected = "Level" + numLvl;
-            SceneManager.LoadScene(levelSelected);
+            LoadNextScene(levelSelected);
+        }
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            GameManager.Instance.DeleteSave();
+            string levelSelected = SceneManager.GetActiveScene().name;
+            LoadNextScene(levelSelected);
         }
 
     }
