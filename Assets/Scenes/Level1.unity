@@ -439,6 +439,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13da88d292d232d4aad5c934c6a76ae3, type: 3}
+--- !u!1 &103565278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3068866383889498642, guid: 3b481c21710b1274caa0ae677adfe817,
+    type: 3}
+  m_PrefabInstance: {fileID: 3068866383909691761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &103565282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103565278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92111c2a099ca874e9042806c9e69025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: {fileID: 0}
+  transitionTime: 1.5
 --- !u!1001 &109397055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1739,6 +1759,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &755683366 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3068866383607185926, guid: 3b481c21710b1274caa0ae677adfe817,
+    type: 3}
+  m_PrefabInstance: {fileID: 3068866383909691761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &766367629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3880061453864145714, guid: 153765e3dec66a14f8b5ff51bfe38608,
@@ -10633,6 +10659,26 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4814379853943681444}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2113934748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3068866382505412380, guid: 3b481c21710b1274caa0ae677adfe817,
+    type: 3}
+  m_PrefabInstance: {fileID: 3068866383909691761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2113934755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113934748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92111c2a099ca874e9042806c9e69025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: {fileID: 755683366}
+  transitionTime: 1.5
 --- !u!1001 &3068866383909691761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10640,6 +10686,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3068866381963909801, guid: 3b481c21710b1274caa0ae677adfe817,
+        type: 3}
+      propertyPath: m_Name
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068866381963909803, guid: 3b481c21710b1274caa0ae677adfe817,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2113934755}
+    - target: {fileID: 3068866381963909803, guid: 3b481c21710b1274caa0ae677adfe817,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068866381963909803, guid: 3b481c21710b1274caa0ae677adfe817,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3068866382505412354, guid: 3b481c21710b1274caa0ae677adfe817,
         type: 3}
       propertyPath: m_Pivot.x
@@ -10758,7 +10824,37 @@ PrefabInstance:
     - target: {fileID: 3068866382505412380, guid: 3b481c21710b1274caa0ae677adfe817,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068866383105787175, guid: 3b481c21710b1274caa0ae677adfe817,
+        type: 3}
+      propertyPath: m_Text
+      value: Level Selection (PRESS L)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068866383812545847, guid: 3b481c21710b1274caa0ae677adfe817,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068866383812545849, guid: 3b481c21710b1274caa0ae677adfe817,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2113934755}
+    - target: {fileID: 3068866383812545849, guid: 3b481c21710b1274caa0ae677adfe817,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068866383812545849, guid: 3b481c21710b1274caa0ae677adfe817,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068866383889498644, guid: 3b481c21710b1274caa0ae677adfe817,
+        type: 3}
+      propertyPath: m_Text
+      value: Restart    (PRESS R)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b481c21710b1274caa0ae677adfe817, type: 3}
