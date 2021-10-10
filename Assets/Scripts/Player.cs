@@ -200,6 +200,7 @@ public class Player : MonoBehaviour
 
         MainCamera.GetInstance().StopAlarm();
         players.Clear();
+        Time.timeScale = 1.0f;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
