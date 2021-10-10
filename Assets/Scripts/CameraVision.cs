@@ -8,6 +8,7 @@ public class CameraVision : MonoBehaviour
     {
         if(collision.gameObject.tag.Contains("Player"))
         {
+            Debug.Log("PLayer has died!!!!  vy camera");
             collision.gameObject.SendMessage("Death");
         }
     }

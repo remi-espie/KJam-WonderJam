@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     private float timeBeforeChangeGravity;
 
     private uint nbSignals = 0;
+    private bool endSection = false;
 
     // Start is called before the first frame update
     void Start()
@@ -47,18 +48,21 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        float movement = 0.0f;
-        if(Input.GetKey(leftMove))
+        if (!endSection)
         {
-            movement = -1.0f;
-        }
-        else if(Input.GetKey(rightMove))
-        {
-            movement = 1.0f;
-        }
+            float movement = 0.0f;
+            if (Input.GetKey(leftMove))
+            {
+                movement = -1.0f;
+            }
+            else if (Input.GetKey(rightMove))
+            {
+                movement = 1.0f;
+            }
 
-        Vector3 targetVelocity = new Vector2(movement * speed * Time.fixedDeltaTime, rb.velocity.y);
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.01f);
+            Vector3 targetVelocity = new Vector2(movement * speed * Time.fixedDeltaTime, rb.velocity.y);
+            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.01f);
+        }
     }
 
     private void Update()
@@ -66,11 +70,11 @@ public class Player : MonoBehaviour
         timeBeforeChangeGravity -= Time.deltaTime;
         timeBeforeChangeGravity = Mathf.Max(0.0f, timeBeforeChangeGravity);
 
-        if(Input.GetKeyDown(changeGravity) && timeBeforeChangeGravity == 0.0f)
+        if (Input.GetKeyDown(changeGravity) && timeBeforeChangeGravity == 0.0f && !endSection)
         {
             GravityFlipped = !GravityFlipped;
             timeBeforeChangeGravity = TIMEBEFORECHANGEGRAVITY;
-        }   
+        }
     }
 
     public bool isAlive()
@@ -90,11 +94,13 @@ public class Player : MonoBehaviour
 
     public void EndSection()
     {
-        transform.gameObject.SetActive(false);
+        endSection = true;
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public void StartSection()
     {
-        transform.gameObject.SetActive(true);
+        endSection = false;
+        GetComponent<SpriteRenderer>().enabled = true;
     }
-}
+}   
