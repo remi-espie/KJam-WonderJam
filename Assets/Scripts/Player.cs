@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
 {
     public static float timeBeforeDie = 10.0f;
 
+    public static bool gravityFlipped = false;
+    Vector2 defaultGravity;
+
     private float speed = 300.0f;
     private Vector3 velocity;
 
@@ -25,6 +28,21 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Awake()
+    {
+        defaultGravity = Physics2D.gravity;
+    }
+
+    public bool GravityFlipped
+    {
+        get => gravityFlipped;
+        set
+        {
+            gravityFlipped = value;
+            Physics2D.gravity = defaultGravity * (value ? -1 : 1);
+        }
     }
 
     void FixedUpdate()
@@ -50,7 +68,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetKeyDown(changeGravity) && timeBeforeChangeGravity == 0.0f)
         {
-            Physics2D.gravity *= -1.0f;
+            GravityFlipped = !GravityFlipped;
             timeBeforeChangeGravity = TIMEBEFORECHANGEGRAVITY;
         }   
     }
