@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static float timeBeforeDie = 10.0f;
+    private static List<Player> players = new List<Player>();
+    private static bool playersHasActivateAlarm = false;
+    private static bool death = false;
+
+    public float timeBeforeDie = 2.0f;
 
     public static bool gravityFlipped = false;
     Vector2 defaultGravity;
@@ -33,6 +37,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         defaultGravity = Physics2D.gravity;
+        players.Add(this);
     }
 
     public bool GravityFlipped
@@ -63,6 +68,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        CheckPlayers();
+
         timeBeforeChangeGravity -= Time.deltaTime;
         timeBeforeChangeGravity = Mathf.Max(0.0f, timeBeforeChangeGravity);
 
@@ -71,6 +78,41 @@ public class Player : MonoBehaviour
             GravityFlipped = !GravityFlipped;
             timeBeforeChangeGravity = TIMEBEFORECHANGEGRAVITY;
         }   
+
+        if(nbSignals == 0)
+        {
+            timeBeforeDie -= Time.deltaTime;
+            timeBeforeDie = Mathf.Max(0.0f, timeBeforeDie);
+
+            if(timeBeforeDie == 0.0f && !death)
+            {
+                Death();
+            }
+        }
+        else
+        {
+            timeBeforeDie = 2.0f;
+        }
+    }
+
+    public static void CheckPlayers()
+    {
+        int i = 0;
+        while(i < players.Count && players[i].nbSignals > 0)
+        {
+            i++;
+        }
+
+        if(i < players.Count && !death)
+        {
+            MainCamera.GetInstance().StartAlarm();
+            playersHasActivateAlarm = true;
+        }
+        else if(playersHasActivateAlarm)
+        {
+            playersHasActivateAlarm = false;
+            MainCamera.GetInstance().StopAlarm();
+        }
     }
 
     public bool isAlive()
@@ -96,5 +138,22 @@ public class Player : MonoBehaviour
     public void StartSection()
     {
         transform.gameObject.SetActive(true);
+    }
+
+    public static void Death()
+    {
+        if(!death)
+        {
+            death = true;
+            Time.timeScale = 0.0f;
+            players[0].StartCoroutine(players[0].DeathCoroutine());
+        }
+    }
+
+    private IEnumerator DeathCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(2.0f);
+
+        MainCamera.GetInstance().StopAlarm();
     }
 }

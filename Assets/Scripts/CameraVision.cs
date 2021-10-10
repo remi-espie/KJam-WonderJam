@@ -8,7 +8,8 @@ public class CameraVision : MonoBehaviour
     {
         if(collision.gameObject.tag.Contains("Player"))
         {
-            collision.gameObject.SendMessage("Death");
+            MainCamera.GetInstance().StartAlarm();
+            Player.Death();
         }
     }
 }
