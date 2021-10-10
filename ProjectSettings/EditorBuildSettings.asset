@@ -4,14 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/LevelSelection.unity
-    guid: fa92692ac65314e40bd0c62446ad53da
-  - enabled: 1
-    path: Assets/Scenes/AlexLvl1Test.unity
-    guid: af9c73acc3f8f4f4c9ad940ecc6211a6
-  - enabled: 1
-    path: Assets/Scenes/AlexLvl2Test.unity
-    guid: 31fa2e0e36da5d54fb0754be09294d2b
+  m_Scenes: []
   m_configObjects: {}
