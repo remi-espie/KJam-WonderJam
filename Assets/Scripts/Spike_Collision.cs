@@ -36,5 +36,12 @@ public class Spike_Collision : MonoBehaviour
             //SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
 
         }
+
+        if (collider2D.tag == "Guard")
+        {
+            print("hitbox touchée par GUARD");
+            collider2D.sendMessage("youdienow");
+
+        }
     }
 }
