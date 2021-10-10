@@ -15,7 +15,7 @@ public class CameraVision : MonoBehaviour
     {
         if(collision.gameObject.tag.Contains("Player"))
         {
-            _spriteRenderer.color = Color.red;
+            _spriteRenderer.color = new Color(255,0,0,0.5f);
             MainCamera.GetInstance().StartAlarm();
             Player.Death();
         }
