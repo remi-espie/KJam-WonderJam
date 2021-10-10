@@ -26,6 +26,9 @@ public class Player : MonoBehaviour
     public KeyCode rightMove;
     public KeyCode changeGravity;
 
+    private Animator _animator;
+    private Sprite mainSprite;
+
     private readonly float TIMEBEFORECHANGEGRAVITY = 0.75f;
     private float timeBeforeChangeGravity;
 
@@ -36,6 +39,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        mainSprite = GetComponent<SpriteRenderer>().sprite;
     }
 
     void Awake()
@@ -71,11 +76,18 @@ public class Player : MonoBehaviour
             SpriteRenderer spr = GetComponent<SpriteRenderer>();
             if(movement < 0.0f)
             {
+                _animator.enabled = true;
                 spr.flipX = true;
             }
             else if(movement > 0.0f)
             {
+                _animator.enabled = true;
                 spr.flipX = false;
+            }
+            else
+            {
+                _animator.enabled = false;
+                GetComponent<SpriteRenderer>().sprite = mainSprite;
             }
 
             if(Physics2D.gravity.y > 0.0f)
