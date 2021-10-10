@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
             timeBeforeChangeGravity = TIMEBEFORECHANGEGRAVITY;
         }   
 
-        if(nbSignals == 0)
+        if(nbSignals == 0 && !endSection)
         {
             timeBeforeDie -= Time.deltaTime;
             timeBeforeDie = Mathf.Max(0.0f, timeBeforeDie);

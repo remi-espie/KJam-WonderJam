@@ -1,13 +1,20 @@
 fileFormatVersion: 2
 <<<<<<< Updated upstream
 <<<<<<< HEAD
+guid: 9eaf61cd78cf9174badcb1453d4409eb
+=======
+<<<<<<< HEAD
 guid: 4cdbb318005f4aa488ad59646aa95f1e
 =======
 guid: 406a9552fac0a3447a19386178e51983
 >>>>>>> e16fc7070adce32146f2e869434c10d2b6d8a3b3
+<<<<<<< HEAD
+>>>>>>> develop
+=======
 =======
 guid: 27389aaefb977c54ab2583d95acd4c8d
 >>>>>>> Stashed changes
+>>>>>>> feature/menu2
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
