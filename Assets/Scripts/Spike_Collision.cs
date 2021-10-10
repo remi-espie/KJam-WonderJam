@@ -19,7 +19,7 @@ public class Spike_Collision : MonoBehaviour
         Death();
     }
 
-    void Death()
+    public static void Death()
     {
         SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
