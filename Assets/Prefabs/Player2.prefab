@@ -97,10 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee529cda88c0974f97a4e8b44c2c8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBeforeDieText: {fileID: 0}
   leftMove: 276
   rightMove: 275
   changeGravity: 305
-  timeRemaining: 10
 --- !u!50 &1120381378340074616
 Rigidbody2D:
   serializedVersion: 4
@@ -161,6 +161,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0063899755, y: -0.017890096}
-  m_Size: {x: 0.93609977, y: 0.9642198}
+  m_Offset: {x: 0.011195064, y: -0.0034768581}
+  m_Size: {x: 0.32106555, y: 0.93539333}
   m_Direction: 0
