@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 guid: b33ba6d9fc34e084ba7fde7c662ff0e1
 =======
@@ -7,7 +8,13 @@ guid: 008facd594cf3634ba73d3c0abf071db
 =======
 guid: 9c71d3030b3396448ab953ed80a3bc2a
 >>>>>>> e16fc7070adce32146f2e869434c10d2b6d8a3b3
+<<<<<<< HEAD
 >>>>>>> develop
+=======
+=======
+guid: 069a010826bc9fa40b12e75aac1702dd
+>>>>>>> Stashed changes
+>>>>>>> feature/menu2
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4

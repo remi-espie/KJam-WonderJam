@@ -76,4 +76,13 @@ public class RussianGuard : MonoBehaviour
     {
         nbSignals--;
     }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2")
+        {
+            Spike_Collision.Death();
+        }
+    }
 }

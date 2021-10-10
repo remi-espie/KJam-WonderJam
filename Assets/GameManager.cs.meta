@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 guid: 55abb257e42979047af9103827f2b637
 =======
@@ -7,7 +8,13 @@ guid: 954a40b839f8c8148ac22b20debe3a77
 =======
 guid: e8a0691e64a966b428b2f53c8954e141
 >>>>>>> e16fc7070adce32146f2e869434c10d2b6d8a3b3
+<<<<<<< HEAD
 >>>>>>> develop
+=======
+=======
+guid: b440b070063acaf4db4fb4e7958fdac8
+>>>>>>> Stashed changes
+>>>>>>> feature/menu2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

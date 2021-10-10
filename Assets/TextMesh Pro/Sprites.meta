@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 guid: 23357e05b86178649b18bfa412a7aa6f
 =======
@@ -7,7 +8,13 @@ guid: 6507a38004897a4499fa63927eb846a2
 =======
 guid: 14d5b5da99144da47bb0473c2881f945
 >>>>>>> e16fc7070adce32146f2e869434c10d2b6d8a3b3
+<<<<<<< HEAD
 >>>>>>> develop
+=======
+=======
+guid: 3f9319171ba20a841bd5e9ec9bc68b64
+>>>>>>> Stashed changes
+>>>>>>> feature/menu2
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 guid: ef2721ef636265d4da975b7f9bf177c1
 =======
@@ -7,7 +8,13 @@ guid: c3dd9c91eb37ef24e951ce0aa84f4466
 =======
 guid: 416d3ae7e0892814d8558e35d66af443
 >>>>>>> e16fc7070adce32146f2e869434c10d2b6d8a3b3
+<<<<<<< HEAD
 >>>>>>> develop
+=======
+=======
+guid: ca5bb0673a5bc754590ec173411210c8
+>>>>>>> Stashed changes
+>>>>>>> feature/menu2
 TextScriptImporter:
   externalObjects: {}
   userData: 

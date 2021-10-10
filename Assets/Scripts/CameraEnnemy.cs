@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class CameraEnnemy : MonoBehaviour
 {
     public float visionLength;
     public float visionHeight;

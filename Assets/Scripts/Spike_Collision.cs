@@ -19,9 +19,10 @@ public class Spike_Collision : MonoBehaviour
         Death();
     }
 
-    void Death()
+    public static void Death()
     {
-        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+        SceneManager.LoadScene("LevelOne");
+        //SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
 
     void OnTriggerEnter2D(Collider2D collider2D)
@@ -34,6 +35,13 @@ public class Spike_Collision : MonoBehaviour
             Time.timeScale = 0.0f;
             StartCoroutine(KillWaiter());
             //SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+
+        }
+
+        if (collider2D.tag == "Guard")
+        {
+            print("hitbox touchée par GUARD");
+            Destroy(collider2D.gameObject);
 
         }
     }
