@@ -85,7 +85,7 @@ public class CameraControllerSelectLevel : MonoBehaviour
             GameManager.Instance.NbTries[GameManager.Instance.CurrentLvl] = 0;
             //GameManager.Instance.Collectable[GameManager.Instance.CurrentLvl] = 0;
             int numLvl = index + 1;
-            string levelSelected = "AlexLevel" + numLvl+"Test";//to remove
+            string levelSelected = "Level" + numLvl;
             SceneManager.LoadScene(levelSelected);
         }
 
