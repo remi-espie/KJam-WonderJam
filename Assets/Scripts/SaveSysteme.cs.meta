@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+guid: b4df2188486ebfc46949fac5450b3a2e
+=======
+<<<<<<< HEAD
+guid: 5f6016b86700ce84a94d3268d4ceacc4
+=======
+guid: 62528793ed9636740814e51f4d78a05d
+>>>>>>> e16fc7070adce32146f2e869434c10d2b6d8a3b3
+<<<<<<< HEAD
+>>>>>>> develop
+=======
+=======
+guid: aa0cfa195d24a7042be2306e6b9fbccd
+>>>>>>> Stashed changes
+>>>>>>> feature/menu2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

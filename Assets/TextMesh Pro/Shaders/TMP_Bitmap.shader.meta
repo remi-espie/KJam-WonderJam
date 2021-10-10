@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+guid: e22b5a07a8b13ae4c9ea5117f5dc241b
+=======
+<<<<<<< HEAD
+guid: 0262f08fefcd36f449f0439304eebd5f
+=======
+guid: 03af989059cb0f6409aa6b1b05c8b701
+>>>>>>> e16fc7070adce32146f2e869434c10d2b6d8a3b3
+<<<<<<< HEAD
+>>>>>>> develop
+=======
+=======
+guid: f6a2679501928be4b8c5e6ba7ba999de
+>>>>>>> Stashed changes
+>>>>>>> feature/menu2
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

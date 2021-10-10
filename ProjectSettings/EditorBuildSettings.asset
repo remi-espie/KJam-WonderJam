@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Arthur_Scene.unity
-    guid: c8f6c1342855ac9418d31a99019d647e
+    path: Assets/Scenes/MainMenu.unity
+    guid: 30a9e5a8dcdf6ef40a90690ac04acb89
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: fb788a01f9d6ac34484673af20d6a0cd
+    path: Assets/Scenes/Tutorial.unity
+    guid: 8a077ba0b110cbb4c91209b4ffc1168e
   - enabled: 1
-    path: Assets/Scenes/Scene Remi.unity
-    guid: a18698ac1ca95a74c84d3e755807e60b
+    path: Assets/Scenes/LevelSelection.unity
+    guid: c9efe145abcebf94f92001b77984a3b1
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: b1eda652935951c43a6206aa1dd37da7
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 8ca8c90e7a6c7e447a988a1f9d1a8d9f
+  - enabled: 1
+    path: Assets/Scenes/LastLevel.unity
+    guid: 268297343526f2546b41ccba13aef80c
   m_configObjects: {}
