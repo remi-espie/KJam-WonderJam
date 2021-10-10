@@ -11,8 +11,11 @@ public class RussianGuard : MonoBehaviour
     private Rigidbody2D rb;
 
     private Boolean direction = false;
+    private bool upsideDown = false;
     private readonly float TIMEBEFORECHANGEGRAVITY = 2.0f;
     private float timeBeforeChangeGravity;
+
+    public float speedMultiplier;
 
     private uint nbSignals = 0;
 
@@ -26,6 +29,7 @@ public class RussianGuard : MonoBehaviour
     {
         direction = !direction;
         Debug.Log("GUARD: Turning around now!");
+        transform.localScale = Vector3.Scale(new Vector3(-1, 1, 1), transform.localScale);
     }
 
     void FixedUpdate()
@@ -33,11 +37,11 @@ public class RussianGuard : MonoBehaviour
         float movement = 0.0f;
         if (direction)
         {
-            movement = -1.0f;
+            movement = -1.0f * speedMultiplier;
         }
         else if (!direction)
         {
-            movement = 1.0f;
+            movement = 1.0f * speedMultiplier;
         }
 
         Vector3 targetVelocity = new Vector2(movement * speed * Time.fixedDeltaTime, rb.velocity.y);
@@ -46,7 +50,16 @@ public class RussianGuard : MonoBehaviour
 
     private void Update()
     {
-        
+        if (Player.gravityFlipped==true && !upsideDown)
+        {
+            upsideDown = true;
+            transform.localScale = Vector3.Scale(new Vector3(1, -1, 1), transform.localScale);
+        }
+        if (Player.gravityFlipped==false && upsideDown)
+        {
+            upsideDown = false;
+            transform.localScale = Vector3.Scale(new Vector3(1, -1, 1), transform.localScale);
+        }
     }
 
     public bool isAlive()
