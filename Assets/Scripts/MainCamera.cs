@@ -1,20 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainCamera : MonoBehaviour
 {
     private static MainCamera INSTANCE;
     private Camera cam;
-    private Color camColor;
     public bool alarm;
+
+    public Canvas Canvas;
 
     // Start is called before the first frame update
     void Start()
     {
         cam = GetComponent<Camera>();
-        camColor = cam.backgroundColor;
-
         INSTANCE = this;
     }
 
@@ -47,11 +47,11 @@ public class MainCamera : MonoBehaviour
             if(alarm)
             {
                 yield return new WaitForSecondsRealtime(0.5f);
-                cam.backgroundColor = Color.red;
+                Canvas.GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             }
 
             yield return new WaitForSecondsRealtime(0.5f);
-            cam.backgroundColor = camColor;
+            Canvas.GetComponent<RawImage>().color = new Color(255, 255, 255, 0);
         }
 
         yield return null;
