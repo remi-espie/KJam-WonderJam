@@ -203,9 +203,10 @@ public class Player : MonoBehaviour
         //Time.timeScale = 1.0f;
         //death = false;
         MainCamera.GetInstance().StopAlarm();
-        DontDestroyOnLoad(transform.gameObject);
-        SceneManager.LoadScene("Level1", LoadSceneMode.Single );
+        //DontDestroyOnLoad(transform.gameObject);
         players.Clear();
+        SceneManager.LoadScene("Level1");
+        
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
