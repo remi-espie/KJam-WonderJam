@@ -7,14 +7,16 @@ public class PlayerData
 {
     private int currentLvl { get; set; }
     private int maxLvlRich { get; set; }
-    private int[] collectable { get; set; }
+    //private int[] collectable { get; set; }
     private int[] nbTries { get; set; }
+    private int[] bestNbTries { get; set; }
 
     public PlayerData(GameManager gameManager){
         currentLvl = gameManager.CurrentLvl;
         maxLvlRich = gameManager.MaxLvlRich;
-        collectable = gameManager.Collectable;
+        //collectable = gameManager.Collectable;
         nbTries = gameManager.NbTries;
+        bestNbTries = gameManager.BestNbTries;
     }
 
     public int CurrentLvl
@@ -27,14 +29,19 @@ public class PlayerData
         get { return maxLvlRich; }
         set { maxLvlRich = value; }
     }
-    public int[] Collectable
+    /*public int[] Collectable
     {
         get { return collectable; }
         set { collectable = value; }
-    }
+    }*/
     public int[] NbTries
     {
         get { return nbTries; }
         set { nbTries= value; }
+    }
+    public int[] BestNbTries
+    {
+        get { return bestNbTries; }
+        set { bestNbTries = value; }
     }
 }

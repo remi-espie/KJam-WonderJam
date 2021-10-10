@@ -42,9 +42,7 @@ public class CameraController : MonoBehaviour
         if(index > tab.Count-1)
         {
             //index = tab.Count - 1;
-            GameManager.Instance.CurrentLvl++;
-            GameManager.Instance.MaxLvlRich++;
-            GameManager.Instance.SavePlayer();
+            GameManager.Instance.resetForNextLvl();
             
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
             //Debug.Log("Change scene");
