@@ -1471,7 +1471,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 88e0a9b34b1cf1d4881bfd11f9bc3f0c, type: 3}
   SpriteButton: {fileID: 677035402}
   transition: {fileID: 218353403}
-  transitionTime: 1
+  transitionTime: 1.2
   offset: {x: 0, y: 2, z: -10}
 --- !u!1 &1844212848
 GameObject:

@@ -88,6 +88,12 @@ public class CameraControllerSelectLevel : MonoBehaviour
             string levelSelected = "Level" + numLvl;
             LoadNextScene(levelSelected);
         }
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            GameManager.Instance.DeleteSave();
+            string levelSelected = SceneManager.GetActiveScene().name;
+            LoadNextScene(levelSelected);
+        }
 
     }
 
