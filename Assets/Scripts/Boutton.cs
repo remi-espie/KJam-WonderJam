@@ -23,7 +23,7 @@ public class Boutton : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag.Contains("Player"))
+        if(collision.gameObject.tag.Contains("Player") || collision.gameObject.tag.Contains("Guard"))
         {
             target.SendMessage("Activate");
             GetComponent<SpriteRenderer>().sprite = activateSprite;
@@ -32,7 +32,7 @@ public class Boutton : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Contains("Player"))
+        if (collision.gameObject.tag.Contains("Player") || collision.gameObject.tag.Contains("Guard"))
         {
             target.SendMessage("Desactivate");
             GetComponent<SpriteRenderer>().sprite = disableSprite;
