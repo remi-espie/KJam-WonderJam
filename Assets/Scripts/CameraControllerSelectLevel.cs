@@ -8,6 +8,8 @@ using System.IO;
 public class CameraControllerSelectLevel : MonoBehaviour
 {
     [SerializeField] List<GameObject> tab;
+    [SerializeField] List<GameObject> stairs;
+    [SerializeField] List<GameObject> Lock;
     public GameObject gameManager;
     [SerializeField] Vector3 offset;
 
@@ -19,6 +21,17 @@ public class CameraControllerSelectLevel : MonoBehaviour
     private void Start()
     {
         tab[index].GetComponent<Animator>().SetBool("isSelected", true);
+        Debug.Log(GameManager.Instance.MaxLvlRich);
+        int nbLevel = GameManager.Instance.MaxLvlRich;
+        int nbStairs = GameManager.Instance.MaxLvlRich - 1;
+        for (int i = 0; i < nbStairs; i++)
+        {
+            stairs[i].gameObject.SetActive(true);
+        }
+        for(int i=0; i < nbLevel-1; i++)
+        {
+            Lock[i].gameObject.SetActive(false);
+        }
         DontDestroyOnLoad(gameManager);
     }
 
@@ -27,12 +40,12 @@ public class CameraControllerSelectLevel : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if(index+1 < tab.Count-1 && index+1 <= PlayerPrefs.GetInt("MaxLevelRich"))
+            if(index+1 < tab.Count-1 && index+1 <= GameManager.Instance.MaxLvlRich)
                 NextPos();
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (index - 1 > 0 )
+            if (index - 1 >= 0 )
                 PreviousPos();
         }
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
@@ -40,8 +53,7 @@ public class CameraControllerSelectLevel : MonoBehaviour
             //save data player
 
             int numLvl = index + 1;
-            string levelSelected = "Alexlvl" + numLvl +"Test";//to remove
-            //string levelSelected = "Level" + index+1;
+            string levelSelected = "Level" + numLvl;//to remove
             SceneManager.LoadScene(levelSelected);
         }
 
