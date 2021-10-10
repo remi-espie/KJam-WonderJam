@@ -26,6 +26,7 @@ public class RussianGuard : MonoBehaviour
     {
         direction = !direction;
         Debug.Log("GUARD: Turning around now!");
+        transform.localScale = Vector3.Scale(new Vector3(-1, 1, 1), transform.localScale);
     }
 
     void FixedUpdate()
